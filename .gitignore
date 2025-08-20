@@ -1,0 +1,22 @@
+# Eclipse specific
+.classpath
+.project
+.settings/
+.metadata/
+Servers/
+
+# Build outputs
+/build/
+/target/
+*.class
+*.war
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Sensitive
+db.properties
