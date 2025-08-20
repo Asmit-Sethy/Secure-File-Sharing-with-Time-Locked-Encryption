@@ -1,0 +1,68 @@
+	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+  
+   <%@page import="java.io.FileInputStream" %>
+    <%@page import="java.io.IOException" %>
+    <%@page import="java.io.PrintWriter" %>
+    <%@page import="javax.swing.JDialog" %>
+    <%@page import="javax.swing.JOptionPane" %>
+    <%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement" %>
+<%@ page import="dbcon.dbcon" %>
+<%@ page import="java.sql.*"%>
+<%@ page import="javax.swing.*"%>  
+
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<% String status="Downloaded"; 
+String id=request.getParameter("id");%>
+<%
+
+String secretkey=request.getParameter("secretkey");
+
+
+String filename = request.getParameter("filename");
+System.out.println(filename);
+
+
+int secretkey1=Integer.valueOf(secretkey);
+
+JFrame f;
+f = new JFrame();
+String name = JOptionPane.showInputDialog(f, "Enter Secret Key");
+
+int key=Integer.valueOf(name);
+
+if(key==secretkey1)
+{
+
+	
+	
+	
+Connection con;
+con=dbcon.create();
+%>
+
+
+
+
+<embed  src="Local/<%=filename%>" height="1000px" width="1700px" >
+	
+	<% 
+	
+	
+	
+}
+
+
+%>
+
+
+
+</body>
+</html>

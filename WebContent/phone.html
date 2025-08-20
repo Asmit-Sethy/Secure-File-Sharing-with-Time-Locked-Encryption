@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Number Input</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="/submit" method="post" onsubmit="return validateForm()">
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" maxlength="10" required>
+    <small>Format: 1234567890</small>
+    <br>
+    <span id="error-message" class="error"></span>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    function validateForm() {
+      var phoneNumber = document.getElementById('phone').value;
+
+      if (phoneNumber.length !== 10) {
+        document.getElementById('error-message').innerText = 'Please enter a 10-digit phone number';
+        return false;
+      } else {
+        document.getElementById('error-message').innerText = '';
+        return true;
+      }
+    }
+  </script>
+
+</body>
+</html>
